@@ -1,0 +1,25 @@
+<div class="col-md-4 jumbotron">
+  <h3>Share a link</h3>
+  <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
+    <div class="form-group">
+      <input type="text" ng-model="LinksFactory.linkName" class="form-control" placeholder="News Title">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="LinksFactory.rawUrl" class="form-control" placeholder="www.sample.com">
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+</div>
+
+<div ng-show="links.length" class="well">
+  <h3>News List</h3>
+  <ul>
+    <li ng-repeat="item in links">
+      <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}})</small></span>
+      <br>
+      <a ui-sref="links.comments({ linkId: item.id })">Comments</a>
+    </li>
+  </ul>
+</div>
+
+<div ui-view> </div>
