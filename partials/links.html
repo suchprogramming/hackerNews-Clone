@@ -1,5 +1,5 @@
 <div class="col-md-4 jumbotron">
-  <h3>Share a link</h3>
+  <h3>Share a news article</h3>
   <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
     <div class="form-group">
       <input type="text" ng-model="LinksFactory.linkName" class="form-control" placeholder="News Title">
@@ -17,7 +17,7 @@
     <li ng-repeat="item in links">
       <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}})</small></span>
       <br>
-      <a ui-sref="links.comments({ linkId: item.id })">Comments</a>
+      <a href="" ui-sref="link({ id: item.id })">Comments</a>
     </li>
   </ul>
 </div>

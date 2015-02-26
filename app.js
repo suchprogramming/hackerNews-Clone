@@ -12,8 +12,8 @@ hackerNews.config(function($stateProvider) {
     controller: 'LinksCtrl'
   });
 
-  $stateProvider.state('links.comments', {
-    url: "/:linkId",
+  $stateProvider.state('link', {
+    url: "/links/:id/comments",
     templateUrl: "partials/links.comments.html",
     controller: 'CommentsCtrl'
   });
