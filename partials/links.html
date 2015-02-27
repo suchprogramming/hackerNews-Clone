@@ -1,25 +1,32 @@
-<div class="col-md-4 jumbotron">
-  <h3>Share a news article</h3>
-  <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
-    <div class="form-group">
-      <input type="text" ng-model="LinksFactory.linkName" class="form-control" placeholder="News Title">
-    </div>
-    <div class="form-group">
-      <input type="text" ng-model="LinksFactory.rawUrl" class="form-control" placeholder="www.sample.com">
-    </div>
-    <button type="submit" class="btn btn-info">Submit</button>
-  </form>
+<div class="container">
+  <div class="row jumbotron">
+    <h3>Share Article</h3>
+    <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text" ng-model="LinksFactory.linkName" class="form-control" placeholder="News Title">
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="LinksFactory.rawUrl" class="form-control" placeholder="www.sample.com">
+      </div>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+  <hr>
 </div>
 
-<div ng-show="links.length" class="well">
-  <h3>News List</h3>
-  <ul>
-    <li ng-repeat="item in links">
-      <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}})</small></span>
-      <br>
-      <a href="" ui-sref="link({ id: item.id })">Comments</a>
-    </li>
-  </ul>
+<div class="container">
+  <div class="row">
+    <div ng-show="links.length" class="well">
+      <h3>Article List</h3>
+      <ul>
+        <li ng-repeat="item in links">
+          <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}}) ({{item.score}})</small></span>
+          <br>
+          <a href="" ui-sref="link({ id: item.id })"><small>comments</small></a>
+          <button class="btn btn-xs btn-success" ng-click="upVote(item.id)">Up Vote</button>
+          <button class="btn btn-xs btn-danger" ng-click="downVote(item.id)">Down Vote</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-
-<div ui-view> </div>

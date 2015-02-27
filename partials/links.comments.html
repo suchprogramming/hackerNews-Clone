@@ -1,27 +1,25 @@
-<div ng-show="links.comments.length">
+<div class="container jumbotron">
+  <h2>Add Comment for {{ link.name }}</h2>
+  <form ng-submit="addComment()" class="form" role="form">
+    <div class="form-group">
+      <input type="text" ng-model="userName" class="form-control" placeholder="Enter Name">
+    </div>
+    <br>
+    <div class="form-group">
+      <textarea class="form-control" rows="3" ng-model="commentData" placeholder="Enter Comment"></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Add Comment</button>
+  </form>
+</div>
+
+<div ng-show="link.comments.length">
   <h2>Comments List for {{ link.name }}</h2>
   <ul>
     <li ng-repeat="item in link.comments">
-      {{ item.name }}
+      {{ item.name }} - {{item.commentData}}
     </li>
   </ul>
 </div>
 
-<div>
-  <div class= "jumbotron">
-  <h2>Add Comment for {{ link.name }}</h2>
-  <form ng-submit="addComment()" class="form-inline" role="form">
-    <div class="form-group">
-      <input type="text" ng-model="userName" class="form-control" placeholder="Enter Name">
-    </div>
-    <div class="form-group">
-      <textarea class="form-control" rows="5" ng-model="commentData" placeholder="Enter Comment"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-</div>
-</div>
-
-
-
-<!-- <input type="text" ng-model="commentData" class="form-control" placeholder="Enter Comment"> -->
+<a class="btn btn-info" ui-sref="links" role="button">Back</a>
