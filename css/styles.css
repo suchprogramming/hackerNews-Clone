@@ -1,0 +1,34 @@
+.table-bordered>thead>tr>th {
+  border-bottom-width: 0px;
+}
+.table>thead>tr>th {
+  vertical-align: middle;
+}
+.table{
+  background-color: #fff;
+}
+th.score{
+  text-align:center;
+}
+.up-vote{
+  cursor: pointer;
+}
+.down-vote{
+  cursor: pointer;
+}
+h3 {
+  margin-top:10px;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #c0c0c0;
+  margin: 1em 0; padding: 0;
+}
+.page-header {
+  border-bottom: 1px solid #c9c9c9;
+}
+.btn {
+  border-radius: 2px;
+}

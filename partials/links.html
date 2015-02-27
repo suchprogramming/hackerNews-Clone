@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row jumbotron">
-    <h3>Share Article</h3>
+  <div class="row well well-sm">
+    <h4><span class="label label-primary">Share Article</span></h4>
     <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
       <div class="form-group">
         <input type="text" ng-model="LinksFactory.linkName" class="form-control" placeholder="News Title">
@@ -8,25 +8,39 @@
       <div class="form-group">
         <input type="text" ng-model="LinksFactory.rawUrl" class="form-control" placeholder="www.sample.com">
       </div>
-      <button type="submit" class="btn btn-info">Submit</button>
+      <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
-  <hr>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div ng-show="links.length" class="well">
+  <div class="row well well-sm">
+    <div ng-show="links.length">
       <h3>Article List</h3>
-      <ul>
-        <li ng-repeat="item in links">
-          <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}}) ({{item.score}})</small></span>
-          <br>
-          <a href="" ui-sref="link({ id: item.id })"><small>comments</small></a>
-          <button class="btn btn-xs btn-success" ng-click="upVote(item.id)">Up Vote</button>
-          <button class="btn btn-xs btn-danger" ng-click="downVote(item.id)">Down Vote</button>
-        </li>
-      </ul>
+      <hr>
+      <table ng-repeat="item in links" class="table table-bordered table-condensed" width="100%">
+        <thead>
+        <tr>
+          <th colspan="1" width="90%">
+            <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}}) </small></span>
+          </th>
+          <th colspan="2" class="score">
+            <h4><span class="label label-default">{{item.score}}</span></h4>
+          </th>
+        </tr>
+        </thead>
+        <tr>
+          <td>
+            <a ui-sref="link({ id: item.id })"><small>comments</small></a>
+          </td>
+          <td width="5%" align="center" class="up-vote" ng-click="upVote(item.id)">
+            <a><span class="glyphicon glyphicon-arrow-up"></span></a>
+          </td>
+          <td width="5%" align="center" class=down-vote  ng-click="downVote(item.id)">
+            <a><span class="glyphicon glyphicon-arrow-down"></span></a>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
