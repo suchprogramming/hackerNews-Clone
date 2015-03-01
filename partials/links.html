@@ -1,46 +1,42 @@
-<div class="container">
-  <div class="row well well-sm">
-    <h4><span class="label label-primary">Share Article</span></h4>
-    <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
-      <div class="form-group">
-        <input type="text" ng-model="LinksFactory.linkName" class="form-control" placeholder="News Title">
-      </div>
-      <div class="form-group">
-        <input type="text" ng-model="LinksFactory.rawUrl" class="form-control" placeholder="www.sample.com">
-      </div>
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-  </div>
+<div class="row well well-sm">
+  <h4><span class="label label-primary">Share Article</span></h4>
+  <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
+    <div class="form-group">
+      <input type="text" ng-model="LinksFactory.linkName" class="form-control" placeholder="News Title">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="LinksFactory.rawUrl" class="form-control" placeholder="www.sample.com">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
 </div>
 
-<div class="container">
-  <div class="row well well-sm">
-    <div ng-show="links.length">
-      <h3>Article List</h3>
-      <hr>
-      <table ng-repeat="item in links" class="table table-bordered table-condensed" width="100%">
-        <thead>
-        <tr>
-          <th colspan="1" width="90%">
-            <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}}) </small></span>
-          </th>
-          <th colspan="2" class="score">
-            <h4><span class="label label-default">{{item.score}}</span></h4>
-          </th>
-        </tr>
-        </thead>
-        <tr>
-          <td>
-            <a ui-sref="link({ id: item.id })"><small>comments</small></a>
-          </td>
-          <td width="5%" align="center" class="up-vote" ng-click="upVote(item.id)">
-            <a><span class="glyphicon glyphicon-arrow-up"></span></a>
-          </td>
-          <td width="5%" align="center" class=down-vote  ng-click="downVote(item.id)">
-            <a><span class="glyphicon glyphicon-arrow-down"></span></a>
-          </td>
-        </tr>
-      </table>
-    </div>
+<div class="row well well-sm">
+  <div ng-show="links.length">
+    <h3>Article List</h3>
+    <hr>
+    <table ng-repeat="item in links | orderBy: '-score'" class="table table-bordered table-condensed" width="100%">
+      <thead>
+      <tr>
+        <th colspan="1" width="90%">
+          <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}}) </small></span>
+        </th>
+        <th colspan="2" class="score">
+          <h4><span class="label label-default" ng-class="{ 'label-success' : item.score > 0, 'label-danger' : item.score < 0 }">{{item.score}}</span></h4>
+        </th>
+      </tr>
+      </thead>
+      <tr>
+        <td>
+          <a ui-sref="link({ id: item.id })"><small>go to comments ({{item.comments.length}})</small></a>
+        </td>
+        <td width="5%" align="center" class="up-vote" ng-click="upVote(item.id)">
+          <a><span class="glyphicon glyphicon-arrow-up"></span></a>
+        </td>
+        <td width="5%" align="center" class=down-vote  ng-click="downVote(item.id)">
+          <a><span class="glyphicon glyphicon-arrow-down"></span></a>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
