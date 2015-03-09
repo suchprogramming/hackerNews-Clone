@@ -10,11 +10,14 @@
 th.score{
   text-align:center;
 }
-.up-vote{
+.up-vote, .down-vote{
   cursor: pointer;
 }
-.down-vote{
-  cursor: pointer;
+.glyphicon-arrow-up:hover {
+  color:#5CB85C;
+}
+.glyphicon-arrow-down:hover {
+  color:red;
 }
 h3 {
   margin-top:10px;

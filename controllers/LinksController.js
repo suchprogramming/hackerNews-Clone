@@ -10,12 +10,11 @@ hackerNews.controller('LinksCtrl', function LinksCtrl($scope, $stateParams, Link
   $scope.upVote = function(id) {
     $scope.link = UtilitiesFactory.findById(LinksFactory.links, id);
     $scope.link.score += 1;
-
   };
 
   $scope.downVote = function(id) {
     $scope.link = UtilitiesFactory.findById(LinksFactory.links, id);
     $scope.link.score -= 1;
   };
-  
+
 });
