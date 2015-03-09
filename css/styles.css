@@ -32,3 +32,10 @@ hr {
 .btn {
   border-radius: 2px;
 }
+.comment-date{
+  float: right;
+}
+.well-sm{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}

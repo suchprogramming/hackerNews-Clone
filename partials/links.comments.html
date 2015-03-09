@@ -16,11 +16,23 @@
   <div ng-show="link.comments.length">
     <h4>Comments List for {{ link.name }}</h4>
     <hr>
-    <ul>
-      <li ng-repeat="item in link.comments">
-        {{ item.name }} - {{item.commentData}}
-      </li>
-    </ul>
+    <table ng-repeat="item in link.comments" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>
+            <a class="label label-primary">{{ item.name }}</a> <span class="comment-date">
+            <small>Posted: {{item.commentDate | date: 'short'}}</small></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            {{ item.commentData }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 <div class="row">
