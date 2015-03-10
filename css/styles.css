@@ -1,7 +1,7 @@
 /*Generic Style Tweaks*/
 
-h3 {
-  margin-top:10px;
+h1,h2,h3 {
+  margin: 5px;
 }
 hr {
   display: block;
@@ -54,6 +54,13 @@ th.score{
 
 /*Styles for Comment Tables*/
 
-.comment-date{
+.reply-button{
   float: right;
+}
+tfoot>tr>td.comment-footer{
+  padding: 2px 5px 2px 0px;
+}
+.comment-date{
+  float:right;
+  font-size: 70%;
 }
