@@ -15,11 +15,12 @@
   <div ng-show="links.length">
     <h3>Article List</h3>
     <hr>
-    <table ng-repeat="item in links | orderBy: '-score'" class="table table-bordered table-condensed" width="100%">
+    <table ng-repeat="item in links | orderBy: ['-isPinned','-score']" class="table table-bordered table-condensed" width="100%">
       <thead>
       <tr>
         <th colspan="1" width="90%">
           <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}}) </small></span>
+          <button ng-click="pinStory(item.id)" class="btn btn-info btn-xs pin-link">Pin</button>
         </th>
         <th colspan="2" class="score">
           <h5><span class="label label-default" ng-class="{ 'label-success' : item.score > 0, 'label-danger' : item.score < 0 }">{{item.score}}</span></h5>

@@ -30,7 +30,8 @@ hackerNews.controller('LinksCtrl', function LinksCtrl($scope, $stateParams, Link
 
   $scope.pinStory = function(id) {
     $scope.link = UtilitiesFactory.findById(LinksFactory.links, id);
-    $scope.link.isPinned = !scope.link.isPinned;
+    $scope.link.isPinned = !$scope.link.isPinned;
+    console.log($scope.link.isPinned);
   }
 
 });
