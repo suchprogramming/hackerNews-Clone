@@ -35,6 +35,10 @@ hr {
 th.score{
   text-align:center;
 }
+.is-pinned{
+  float: right;
+  color: #5CB85C;
+}
 
 /*Vote Styling*/
 

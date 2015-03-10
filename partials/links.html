@@ -20,7 +20,9 @@
       <tr>
         <th colspan="1" width="90%">
           <a href="http://{{item.rawUrl}}">{{ item.name }}</a><span><small> ({{item.rawUrl}}) </small></span>
-          <button ng-click="pinStory(item.id)" class="btn btn-info btn-xs pin-link">Pin</button>
+          <button ng-hide="item.isPinned" ng-click="pinStory(item.id)" class="btn btn-info btn-xs pin-link">Pin</button>
+          <button ng-show="item.isPinned" ng-click="pinStory(item.id)" class="btn btn-info btn-xs pin-link">Un-Pin</button>
+          <span ng-show="item.isPinned" class="glyphicon glyphicon-star is-pinned"></span>
         </th>
         <th colspan="2" class="score">
           <h5><span class="label label-default" ng-class="{ 'label-success' : item.score > 0, 'label-danger' : item.score < 0 }">{{item.score}}</span></h5>
