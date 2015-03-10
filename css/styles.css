@@ -1,24 +1,5 @@
-.table-bordered>thead>tr>th {
-  border-bottom-width: 0px;
-}
-.table>thead>tr>th {
-  vertical-align: middle;
-}
-.table{
-  background-color: #fff;
-}
-th.score{
-  text-align:center;
-}
-.up-vote, .down-vote{
-  cursor: pointer;
-}
-.glyphicon-arrow-up:hover {
-  color:#5CB85C;
-}
-.glyphicon-arrow-down:hover {
-  color:red;
-}
+/*Generic Style Tweaks*/
+
 h3 {
   margin-top:10px;
 }
@@ -35,10 +16,40 @@ hr {
 .btn {
   border-radius: 2px;
 }
-.comment-date{
-  float: right;
-}
 .well-sm{
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+}
+
+/*Styles for Link Tables*/
+
+.table-bordered>thead>tr>th {
+  border-bottom-width: 0px;
+}
+.table>thead>tr>th {
+  vertical-align: middle;
+}
+.table{
+  background-color: #fff;
+}
+th.score{
+  text-align:center;
+}
+
+/*Vote Styling*/
+
+.up-vote, .down-vote{
+  cursor: pointer;
+}
+.glyphicon-arrow-up:hover {
+  color:#5CB85C;
+}
+.glyphicon-arrow-down:hover {
+  color:red;
+}
+
+/*Styles for Comment Tables*/
+
+.comment-date{
+  float: right;
 }
