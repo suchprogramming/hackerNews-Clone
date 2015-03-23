@@ -1,14 +1,14 @@
-HackerNews
+HackerNews Clone
 ===========
 
 by Tyler Whitsett
 and Philip Orchard
 
-Angularjs
+AngularJS
 
-This is an Angular JS application that allows you to post a link that contains its own comments page for users to share comments.
+This is an Angular JS application that allows you to post a link of interest and then discuss said link via a comments section.
 
-This app uses Angular Javascript and Bootstrap.
+This app uses AngularJS and Bootstrap for styling.
 
 
 Installation
