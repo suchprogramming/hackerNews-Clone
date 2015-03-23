@@ -4,8 +4,6 @@ HackerNews Clone
 by Tyler Whitsett
 and Philip Orchard
 
-AngularJS
-
 This is an Angular JS application that allows you to post a link of interest and then discuss said link via a comments section.
 
 This app uses AngularJS and Bootstrap for styling.
